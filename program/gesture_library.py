@@ -5,9 +5,9 @@ from menu import MainMenu
 from screen import GestureScreen
 
 
-# defines a function to sart the session using a conditional
-def startSession(tu):
-    if (imgMan.getImageLen() > 0):
+# defines a function to start the session using a conditional
+def start_session(tu):
+    if imgMan.getImageLen() > 0:
         imgMan.randomizeImages()
         mainMenu.place_forget()
 
@@ -16,15 +16,15 @@ def startSession(tu):
 
 
 # defines a function to exit the session using a conditional
-def exitSession():
-    if (imgMan.getImageLen() > 0):
+def exit_session():
+    if imgMan.getImageLen() > 0:
         gestureScreen.place_forget()
         mainMenu.place(relx=0, relheight=1, relwidth=1)
 
 
 # creates the main program window
 root = Tk()
-root.iconphoto = ("")  # assigns the window logo
+root.iconphoto = ""  # assigns the window logo
 root.title("GestureLibrary")  # assigns the window title
 root.geometry("800x600")  # sets the window width and height
 
@@ -37,8 +37,8 @@ mainMenu = MainMenu(topFrame)
 mainMenu.place(relx=0, relheight=1, relwidth=1)
 mainMenu.setFolders()
 
-mainMenu.bindStartSession(startSession)
+mainMenu.bindStartSession(start_session)
 gestureScreen = GestureScreen(topFrame)
-gestureScreen.bindExitSession(exitSession)
+gestureScreen.bindExitSession(exit_session)
 
 root.mainloop()  # calls the mainloop() function
