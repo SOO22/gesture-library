@@ -1,5 +1,3 @@
-''' code for main program '''
-
 from tkinter import *
 
 import library as imgMan

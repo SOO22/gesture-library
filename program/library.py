@@ -1,4 +1,3 @@
-''' code for managing images library '''
 import os
 import random
 

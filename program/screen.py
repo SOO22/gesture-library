@@ -1,4 +1,3 @@
-''' code for display screen '''
 from tkinter import *
 
 from PIL import Image, ImageTk
