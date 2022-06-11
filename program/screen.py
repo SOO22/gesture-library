@@ -74,8 +74,8 @@ class GestureScreen(Frame):
         self.slideShowSession.place_forget()
         self.time = sessionInfo[0]
         self.images = sessionInfo[1]
-        if (self.images == 0 or self.images >= imgMan.getImageLen()):
-            self.images = imgMan.getImageLen()
+        if (self.images == 0 or self.images >= imgMan.get_image_len()):
+            self.images = imgMan.get_image_len()
         if (self.time > 0):
             self.isActive = True
             self.isPaused = False
@@ -87,7 +87,7 @@ class GestureScreen(Frame):
             self.isActive = False
             self.slideShowSession.place(relx=0, relheight=1, relwidth=1)
             self.maxIndex = self.images - 1
-        self.maxIndex = min(self.maxIndex, imgMan.getImageLen() - 1)
+        self.maxIndex = min(self.maxIndex, imgMan.get_image_len() - 1)
         self.completedImages = 0
         self.currentImage = -1
         self.nextImage()
@@ -149,7 +149,7 @@ class GestureScreen(Frame):
     def nextImage(self):
         self.currentImage += 1
         if (self.currentImage > self.maxIndex): self.currentImage = 0
-        nImage = imgMan.getImage(self.currentImage)
+        nImage = imgMan.get_image(self.currentImage)
         self.textImgPath.delete(1.0, "end")
         self.textImgPath.insert(1.0, nImage)
         self.placeImage(nImage)
@@ -158,7 +158,7 @@ class GestureScreen(Frame):
     def prevImage(self):
         self.currentImage -= 1
         if (self.currentImage < 0): self.currentImage = self.maxIndex
-        pImage = imgMan.getImage(self.currentImage)
+        pImage = imgMan.get_image(self.currentImage)
         self.textImgPath.delete(1.0, "end")
         self.textImgPath.insert(1.0, pImage)
         self.placeImage(pImage)
@@ -199,7 +199,7 @@ class GestureScreen(Frame):
 
     def addMaxIndex(self):
         self.maxIndex += 1
-        self.maxIndex = min(self.maxIndex, imgMan.getImageLen() - 1)
+        self.maxIndex = min(self.maxIndex, imgMan.get_image_len() - 1)
 
     def bindExitSession(self, func):
         self.exitToMenu = func

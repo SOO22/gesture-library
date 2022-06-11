@@ -43,7 +43,7 @@ class MainMenu(Frame):
         self.folderCanvas.create_window(0, 0, window=self.foldersList, anchor="nw")
         self.folderCanvas.pack(fill='both')
 
-    # defines a function to create radio buttones for drawing times per image
+    # defines a function to create radio buttons for drawing times per image
     def createTimeSelection(self, parent):
         self.menuTime = IntVar(value=30)
         self.menuTimeTxt = StringVar(value="30")
@@ -129,7 +129,7 @@ class MainMenu(Frame):
         for b in self.foldersSelected:
             list.append(b.get())
 
-        self.avaliable.set("Total Images Avaliable: " + imgMan.updateImageCount(list))
+        self.avaliable.set("Total Images Avaliable: " + imgMan.update_image_count(list))
 
     # defines a function using a method and a conditional to get the time selected for images
     def selectTime(self):

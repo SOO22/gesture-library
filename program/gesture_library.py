@@ -7,8 +7,8 @@ from screen import GestureScreen
 
 # defines a function to start the session using a conditional
 def start_session(tu):
-    if imgMan.getImageLen() > 0:
-        imgMan.randomizeImages()
+    if imgMan.get_image_len() > 0:
+        imgMan.randomize_images()
         mainMenu.place_forget()
 
         gestureScreen.setSession(tu)
@@ -17,7 +17,7 @@ def start_session(tu):
 
 # defines a function to exit the session using a conditional
 def exit_session():
-    if imgMan.getImageLen() > 0:
+    if imgMan.get_image_len() > 0:
         gestureScreen.place_forget()
         mainMenu.place(relx=0, relheight=1, relwidth=1)
 
@@ -30,7 +30,7 @@ root.geometry("800x600")  # sets the window width and height
 
 # Add a Canvas widget
 topFrame = Frame(root)
-imgMan.loadFolders()
+imgMan.load_folders()
 
 topFrame.place(relx=0, relheight=1, relwidth=1)
 mainMenu = MainMenu(topFrame)
