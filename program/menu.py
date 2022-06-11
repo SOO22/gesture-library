@@ -1,5 +1,3 @@
-''' code for main menu '''
-
 from tkinter import *
 
 import library as imgMan
