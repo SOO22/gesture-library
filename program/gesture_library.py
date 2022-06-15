@@ -35,9 +35,9 @@ img_man.load_folders()
 topFrame.place(relx=0, relheight=1, relwidth=1)
 mainMenu = MainMenu(topFrame)
 mainMenu.place(relx=0, relheight=1, relwidth=1)
-mainMenu.setFolders()
+mainMenu.set_folders()
 
-mainMenu.bindStartSession(start_session)
+mainMenu.bind_start_session(start_session)
 gestureScreen = GestureScreen(topFrame)
 gestureScreen.bind_exit_session(exit_session)
 
