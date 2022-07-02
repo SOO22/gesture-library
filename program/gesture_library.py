@@ -24,9 +24,9 @@ def exit_session():
 
 # creates the main program window
 root = Tk()
-root.iconphoto = ""  # assigns the window logo
-root.title("GestureLibrary")  # assigns the window title
-root.geometry("800x600")  # sets the window width and height
+# root.iconphoto = ""
+root.title("GestureLibrary")
+root.geometry("800x600")
 
 # Add a Canvas widget
 topFrame = Frame(root)
